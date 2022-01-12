@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 12, 2021 7:53:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.User" table="user" catalog="toko_buku2" optimistic-lock="version">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="30" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="30" not-null="true" />
+        </property>
+        <property name="jenisKelamin" type="string">
+            <column name="jenis_kelamin" length="10" not-null="true" />
+        </property>
+        <property name="noTelp" type="string">
+            <column name="no_telp" length="15" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="alamat" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

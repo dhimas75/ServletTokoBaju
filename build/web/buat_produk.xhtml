@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Tambah Produk</title>
+    </h:head>
+    <h:body>
+        <ui:include src="template-header.xhtml"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                  <h2>Tambah Produk</h2>
+                  <hr/>
+                  <h:form enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="">Thumbnail </label>
+                        <h:inputFile  value="#{produk.thumbnail}" required="true" requiredMessage="Please upload a file" alt="upload file"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nama Produk </label>
+                        <h:inputText class="form-control" value="#{produk.namaProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Stok Produk </label>
+                        <h:inputText class="form-control" value="#{produk.stokProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ukuran Produk </label>
+                        <h:inputText class="form-control" value="#{produk.ukuranProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Kategori </label>
+                        <h:inputText class="form-control" value="#{produk.kategori}"/>
+                    </div>
+                      <div class="form-group">
+                        <label for="">Harga Produk </label>
+                        <h:inputText class="form-control" value="#{produk.hargaProduk}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Deskripsi </label>
+                        <h:inputTextarea class="form-control" value="#{produk.deskripsiProduk}"/>
+                    </div>
+                    
+                      <h:commandButton class="btn btn-primary" value="Save" action="#{produk.save_produk()}"></h:commandButton>&bnsp; 
+                      <br/><br/>
+                      <h:commandButton class="btn btn-primary" value="Home" action="index.xhtml"></h:commandButton>
+                </h:form>
+                </div>
+            </div>
+        </div>
+        <ui:include src="template-footer.xhtml"/>
+    </h:body>
+</html>

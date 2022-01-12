@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edit Produk</title>
+        <link rel="icon" href="images/logo_atas1.png"></link>
+    </h:head>
+    <h:body>
+        <ui:include src="template-header.xhtml"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                  <h:form>
+                      <h:commandButton class="btn btn-primary" value="Buat Produk" action="buat_produk.xhtml"/>
+                      <h2>Data Produk</h2>
+                        <hr/>
+                        <h:dataTable class="table" border="1" value="#{produk.getAllRecords()}" var="Produk">
+                        <h:column>
+                            <f:facet name="header">ID Produk</f:facet>
+                            #{Produk.idProduk}
+                        </h:column>            
+                        <h:column>
+                            <f:facet name="header">Thumbnail</f:facet>
+                            #{Produk.thumbnail}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nama Produk</f:facet>
+                            #{Produk.namaProduk}
+                        </h:column>            
+                        <h:column>
+                            <f:facet name="header">Stock Produk</f:facet>
+                            #{Produk.stokProduk}
+                        </h:column>            
+                        <h:column>
+                            <f:facet name="header">Ukuran Produk</f:facet>
+                            #{Produk.ukuranProduk}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Kategori</f:facet>
+                            #{Produk.kategori}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Harga Produk</f:facet>
+                            #{Produk.hargaProduk}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Deskripsi Produk</f:facet>
+                            #{Produk.deskripsiProduk}
+                        </h:column>
+                        </h:dataTable>
+                   
+                    <hr/>
+                    <div class="col-sm-6 offset-sm-3">
+                        <label>ID Produk</label>
+                        <h:inputText class="form-control " value="#{produk.idProduk}"/><br/>
+                        <h:commandButton class="btn btn-primary" value="Search" action="#{produk.getById()}"/>
+                    </div>
+                    
+                    <hr/>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Nama Produk </label>
+                        <h:inputText class="form-control" value="#{produk.namaProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Stok Produk </label>
+                        <h:inputText class="form-control" value="#{produk.stokProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Ukuran Produk </label>
+                        <h:inputText class="form-control" value="#{produk.ukuranProduk}"></h:inputText>
+                    </div>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Kategori </label>
+                        <h:inputText class="form-control" value="#{produk.kategori}"/>
+                    </div>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Harga </label>
+                        <h:inputTextarea class="form-control" value="#{produk.hargaProduk}"/>
+                    </div>
+                    <div class="form-group col-sm-6 offset-sm-3">
+                        <label for="">Deskripsi </label>
+                        <h:inputTextarea class="form-control" value="#{produk.deskripsiProduk}"/>
+                    </div>
+                    
+                    <h:commandButton class="btn btn-primary" value="Edit" action="#{produk.edit()}"/>&nbsp;
+                    <h:commandButton class="btn btn-danger" value="Delete" action="#{produk.delete()}"/>
+                    
+                  </h:form>
+                </div>
+            </div>
+        </div>
+        <ui:include src="template-footer.xhtml"/>
+    </h:body>
+</html>
+
