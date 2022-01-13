@@ -1,3 +1,4 @@
 # ServletTokoBaju
 Projek Servlet Netbeans Toko Baju
-- Hii there, i'm dhimas
+Hii there!
+I'm dhimas, I'm Study at CCIT FT UI Depok
